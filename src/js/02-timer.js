@@ -18,7 +18,7 @@ const secondsEl = document.querySelector('span[data-seconds]');
 startButtonEl.setAttribute('disabled', 'true');
 startButtonEl.addEventListener('click', () => {
   setInterval(() => {
-    instantDate = Date.now();
+    let instantDate = Date.now();
     let remainingTime = convertMs(selectedDate - instantDate);
     daysEl.textContent = remainingTime.days;
     hoursEl.textContent = remainingTime.hours;
