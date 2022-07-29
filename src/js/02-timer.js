@@ -18,8 +18,12 @@ const secondsEl = document.querySelector('span[data-seconds]');
 startButtonEl.setAttribute('disabled', 'true');
 startButtonEl.addEventListener('click', () => {
   setInterval(() => {
-    // let instantDate = Date.now();
-    //convertMs(selectedDate - instantDate);
+    instantDate = Date.now();
+    let remainingTime = convertMs(selectedDate - instantDate);
+    daysEl.textContent = remainingTime.days;
+    hoursEl.textContent = remainingTime.hours;
+    minutesEl.textContent = remainingTime.minutes;
+    secondsEl.textContent = remainingTime.seconds;
   }, 1000);
 });
 
