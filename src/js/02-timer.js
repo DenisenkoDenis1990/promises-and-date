@@ -20,10 +20,10 @@ startButtonEl.addEventListener('click', () => {
   setInterval(() => {
     let instantDate = Date.now();
     let remainingTime = convertMs(selectedDate - instantDate);
-    daysEl.textContent = remainingTime.days;
-    hoursEl.textContent = remainingTime.hours;
-    minutesEl.textContent = remainingTime.minutes;
-    secondsEl.textContent = remainingTime.seconds;
+    daysEl.textContent = addLeadingZero(remainingTime.days);
+    hoursEl.textContent = addLeadingZero(remainingTime.hours);
+    minutesEl.textContent = addLeadingZero(remainingTime.minutes);
+    secondsEl.textContent = addLeadingZero(remainingTime.seconds);
   }, 1000);
 });
 
@@ -61,4 +61,8 @@ function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
   //console.log({ days, hours, minutes, seconds });
   return { days, hours, minutes, seconds };
+}
+
+function addLeadingZero(value) {
+  return String(value).padStart(2, 0);
 }
