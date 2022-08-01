@@ -7,8 +7,8 @@ const refs = {
   submitButton: document.querySelector('button[type=submit]'),
 };
 
-refs.submitButton.addEventListener('click', () => {
-  preventDefault();
+refs.submitButton.addEventListener('click', event => {
+  event.preventDefault();
   let delayTime = Number(refs.delay.textContent);
   let stepTime = Number(refs.step.textContent);
   let amount = Number(refs.amount.textContent);
