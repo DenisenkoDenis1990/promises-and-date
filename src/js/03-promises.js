@@ -9,9 +9,9 @@ const refs = {
 
 refs.submitButton.addEventListener('click', event => {
   event.preventDefault();
-  let delayTime = Number(refs.delay.textContent);
-  let stepTime = Number(refs.step.textContent);
-  let amount = Number(refs.amount.textContent);
+  let delayTime = Number(refs.delay.value);
+  let stepTime = Number(refs.step.value);
+  let amount = Number(refs.amount.value);
   console.log(delayTime, stepTime, amount);
   for (let i = 1; i <= amount; i += 1) {
     createPromise(i, delayTime)
