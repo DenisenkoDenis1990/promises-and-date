@@ -8,6 +8,7 @@ const refs = {
 };
 
 refs.submitButton.addEventListener('click', () => {
+  preventDefault();
   let delayTime = Number(refs.delay.textContent);
   let stepTime = Number(refs.step.textContent);
   let amount = Number(refs.amount.textContent);
